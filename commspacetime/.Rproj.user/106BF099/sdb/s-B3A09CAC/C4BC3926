@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Absorption function\n#'\n#' If the vocalizations are far enough away that atmospheric absorption\n#' might become an issue, use this function to calculate it to increase\n#' the accuracy of your radius calculation. \n#' @param f Frequency of vocalization (Hz)\n#' @param temp Temperature \n#' @param C If your temperature is in Celsius, mark TRUE. If Fahrenheit, mark FALSE.\n#' @param rh Relative humidity (percentage)\n#' @param p Barometric pressure. Set to 101.325 as a default. \n#' @return Atmospheric absorption--this gets multiplied by the radius in that calculation.\n#' @export\n#' @examples\n#' find_absorption(f = 2250, temp = 10, C = T, rh = 75, p)\n\nfind_absorption <- function(f, temp, C = TRUE, rh, p = 101.325) {\n  if(C == T) {\n    tempk = temp + 273.15\n  } else {\n    tempk = (temp + 459.67) * (5/9)\n  }\n  psat <- 101.325 * 10^(-6.8346*((273.16/tempk)^1.261) + 4.6151)\nh <- rh * (psat/101.325)\nfrO <- 24 + 4.04*10^4*h*((.02+h)/.391 +h)\nx <- 1/(10*log((exp(1))^2))\nfrN <- (tempk/293.15)^(1/2)*(9+280*h*exp(-4.17*((tempk/293.15)^(-1/3)-1)))\nt0 <- 293.15\nt01 <- 273.16\nz <- 0.1068 * exp(-3352/tempk) * (frN + f^2/frN)^-1\ny = (tempk/t0)^(-5/2) * (0.01275 * exp(-2239.1/tempk) * \n                           (frO+f^2/frO)^-1 + z)\na = 8.686 * f^2 * ((1.84 * 10^-11 * (tempk/t0)^(1/2)) + y)\na = round(a, 5)\nreturn(a)\n}\n",
+    "created" : 1461785809146.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1656486180",
+    "id" : "C4BC3926",
+    "lastKnownWriteTime" : 1461785465,
+    "path" : "~/commspacetime/R/absorption.R",
+    "project_path" : "R/absorption.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

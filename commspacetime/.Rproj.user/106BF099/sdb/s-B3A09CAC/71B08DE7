@@ -1,0 +1,16 @@
+{
+    "contents" : "Package: commspacetime\nType: Package\nTitle: Modeling Communication Space-Time For Acoustic Species\nVersion: 1.0\nDate: 2016-04-27\nAuthor: Danielle V. Nelson\nMaintainer: Danielle V. Nelson <danielle.nelson@oregonstate.edu>\nDescription: This package models the hemispherical or spherical communication\n    space-time of acoustically communicating species, given atmospheric absorption,\n    detection threshold, and background noise levels. It does not calculate acoustic\n    parameters. The parameters needed are source level of vocalization (dB re 20\n    microPa), received level of ambient noise (dB re 20 microPa), frequency (Hz)\n    of vocalization, and duration (how long, s) and rate (how often, per minute)\n    of vocalization. This package can then be used to model how far a vocalization\n    can be perceived in a given soundscape, as well as determine the impacts of any\n    proposed increase in background noise level or noise mitigation strategies.\nLicense: GPL-3\nRoxygenNote: 5.0.1\n",
+    "created" : 1461785500739.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3514743710",
+    "id" : "71B08DE7",
+    "lastKnownWriteTime" : 1461786003,
+    "path" : "~/commspacetime/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "dcf"
+}
