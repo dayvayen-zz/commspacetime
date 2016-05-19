@@ -5,14 +5,6 @@ Version: 1.0
 Date: 2016-04-27
 Author: Danielle V. Nelson
 Maintainer: Danielle V. Nelson <danielle.nelson@oregonstate.edu>
-Description: This package models the hemispherical or spherical communication
-    space-time of acoustically communicating species, given atmospheric absorption,
-    detection threshold, and background noise levels. It does not calculate acoustic
-    parameters. The parameters needed are source level of vocalization (dB re 20
-    microPa), received level of ambient noise (dB re 20 microPa), frequency (Hz)
-    of vocalization, and duration (how long, s) and rate (how often, per minute)
-    of vocalization. This package can then be used to model how far a vocalization
-    can be perceived in a given soundscape, as well as determine the impacts of any
-    proposed increase in background noise level or noise mitigation strategies.
+Description: This package models the hemispherical or spherical communication space-time of acoustically communicating species, given atmospheric absorption, detection threshold, and background noise levels. It does not calculate acoustic parameters. The parameters needed are source level of vocalization (dB re 20 microPa), received level of ambient noise (dB re 20 microPa), frequency (Hz) of vocalization, and duration (how long, s) and rate (how often, per minute) of vocalization. This package can then be used to model how far a vocalization can be perceived in a given soundscape, as well as determine the impacts of any proposed increase in background noise level or noise mitigation strategies.
 License: GPL-3
 RoxygenNote: 5.0.1

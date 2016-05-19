@@ -9,14 +9,19 @@
 #' @param r_vector The initialized vector of possible radius values.
 #' @param absorption The atmospheric absorption calculated by the absorption.R function. Set to 1 unless otherwise specified.
 #' @param perception The detection threshold for your species in question, if known. By default, this is set to zero, which indicates the best possible scenario in which any signal can be perceived if it is above the level of background noise.
+#' @param sphere Choice between spherical spreading and hemispherical spreading. By default, this is set to spherical spreading. For hemispherical spreading, set sphere to FALSE.
 #' @export
 #' @examples
 #' find_r(90, 65, r_vector, absorption = 1, perception)
 
 
 
-find_r <- function(signal, noise, r_vector, absorption = 1, perception = 0) {
-  attenuation = signal - 20*log10(r_vector) - absorption*r_vector
+find_r <- function(signal, noise, r_vector, absorption = 1, perception = 0, sphere = T) {
+  if(sphere == T) {
+    attenuation = signal - 20*log10(r_vector) - 11 - absorption*r_vector
+  } else {
+    attenuation = signal - 20*log10(r_vector) - 8 - absorption*r_vector
+  }
   r <- r_vector[which.min(abs(noise - attenuation))]
   return(r)
 }
